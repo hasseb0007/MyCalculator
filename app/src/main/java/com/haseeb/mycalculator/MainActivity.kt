@@ -14,6 +14,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        listeners()
+
+
+    }
+
+    fun listeners(){
         //Numbers
         tvOne.setOnClickListener { appendOnExpression("1",true) }
         tvTwo.setOnClickListener { appendOnExpression("2",true) }
@@ -35,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         tvLeftParentheses.setOnClickListener { appendOnExpression("(",false) }
         tvRightParentheses.setOnClickListener { appendOnExpression(")",false) }
 
+        //Functions
         tvClear.setOnClickListener {
             tvExpression.text = ""
             tvResult.text=""
@@ -62,9 +69,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
     }
-
 
     fun appendOnExpression(string:String, canClear:Boolean)
     {
